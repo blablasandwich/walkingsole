@@ -28,6 +28,7 @@ ExportedObj/
 *.pdb
 *.opendb
 *.VC.db
+*.meta
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -42,3 +43,7 @@ sysinfo.txt
 
 # Crashlytics generated file
 Assets/StreamingAssets/crashlytics-build.properties
+
+# Google Extra VR stuff
+/Assets/GoogleVR/Beta
+/Assets/GoogleVR/Demos
