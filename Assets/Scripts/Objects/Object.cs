@@ -9,17 +9,18 @@ public class Object : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void test()
     {
+        Debug.Log(GvrPointerInputModule.CurrentRaycastResult.worldPosition);
         Debug.Log("AFSDJGFJDHNGSJENHNJERDHSRH");
         if (testbool)
         {
