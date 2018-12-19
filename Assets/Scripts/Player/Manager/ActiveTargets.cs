@@ -43,7 +43,6 @@ public class ActiveTargets : MonoBehaviour
 
                     selectedObject.GetComponent<CameraMouse>().selected = true;
                 } else {
-                    Debug.Log(selectedObject + " SELEEECTed ELSE");
                     selectedObject = value.transform.root.gameObject;
                 }
 
