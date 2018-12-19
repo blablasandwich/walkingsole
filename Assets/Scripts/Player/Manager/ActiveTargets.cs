@@ -11,6 +11,8 @@ public class ActiveTargets : MonoBehaviour
     void Awake()
     {
         selectedObject = GameObject.Find("Player");
+        previousObject = selectedObject;
+        Debug.Log("previous: " + previousObject);
         if(selectedObject)
         {
             Debug.Log("Initializing game manager default target to: " + selectedObject.name);
@@ -19,8 +21,6 @@ public class ActiveTargets : MonoBehaviour
         } else {
             Debug.LogError("Didn't find any player object, currently nothing is selected on game manager. Maybe place a Player onto the scene.");
         }
-
-
     }
 
     public static GameObject SelectedObject
@@ -34,12 +34,19 @@ public class ActiveTargets : MonoBehaviour
         {
             if(value != null)
             {
-                if(previousObject != selectedObject)
+                if(previousObject != selectedObject && value.tag == "Player")
                 {
-                    //previousObject = false;
+                    previousObject.GetComponent<CameraMouse>().selected = false;
                     previousObject = selectedObject;
+
+                    selectedObject = value;
+
+                    selectedObject.GetComponent<CameraMouse>().selected = true;
+                } else {
+                    Debug.Log(selectedObject + " SELEEECTed ELSE");
+                    selectedObject = value.transform.root.gameObject;
                 }
-                selectedObject = value;
+
                 Debug.Log(value.name + " was selected");
             } else {
                 selectedObject = null;
@@ -48,7 +55,23 @@ public class ActiveTargets : MonoBehaviour
             }
         }
     }
-    
+
+    public static GameObject PSelectedObject
+    {
+        get
+        {
+            return previousObject;
+        }
+
+        set
+        {
+            if(value != null)
+            {
+                Debug.Log("Previous Object shouldn't/can't be set");
+            }
+        }
+    }
+
     public static Vector3 RetPos
     {
         get
