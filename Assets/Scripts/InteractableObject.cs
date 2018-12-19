@@ -13,7 +13,6 @@ public class InteractableObject : MonoBehaviour
             interacted = new UnityEvent();
 
         interacted.AddListener(DoAction);
-        Debug.Log("Wroks2");
     }
 
 
@@ -26,8 +25,9 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
-    void DoAction()
+    public void DoAction()
     {
+        //Display menu or something
         Debug.Log(gameObject.name + " Has done something.");
     }
 }

@@ -1,6 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class ActiveTargets : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class ActiveTargets : MonoBehaviour
         {
             Debug.Log("Initializing game manager default target to: " + selectedObject.name);
             //temporarily for now
-            selectedObject.GetComponent<CameraMouse>().selected = true;
+            selectedObject.GetComponent<CameraMouse>().selected = false;
         } else {
             Debug.LogError("Didn't find any player object, currently nothing is selected on game manager. Maybe place a Player onto the scene.");
         }
@@ -36,21 +37,20 @@ public class ActiveTargets : MonoBehaviour
             {
                 if(previousObject != selectedObject && value.tag == "Player")
                 {
+                    GameObject temp = selectedObject.gameObject;
+                    Debug.Log("this " + selectedObject.name);
                     previousObject.GetComponent<CameraMouse>().selected = false;
-                    previousObject = selectedObject;
-
-                    selectedObject = value;
-
+                    previousObject = temp.gameObject;
+                    selectedObject = value.transform.root.gameObject;
                     selectedObject.GetComponent<CameraMouse>().selected = true;
                 } else {
-                    Debug.Log(selectedObject + " SELEEECTed ELSE");
                     selectedObject = value.transform.root.gameObject;
                 }
 
                 Debug.Log(value.name + " was selected");
             } else {
                 selectedObject = null;
-               // Debug.Log("An object couldn't be set as an selected selected target. No worries");
+                Debug.Log("An object couldn't be set as an selected selected target. No worries");
 
             }
         }

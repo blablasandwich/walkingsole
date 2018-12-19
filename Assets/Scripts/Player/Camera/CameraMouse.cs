@@ -11,7 +11,7 @@ public class CameraMouse : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(ActiveTargets.SelectedObject.name);
+        //Debug.Log(ActiveTargets.SelectedObject.name);
     }
 
 
@@ -53,21 +53,19 @@ public class CameraMouse : MonoBehaviour
             head.transform.rotation = Quaternion.Slerp(head.transform.rotation, targetHeadRotation, speed * Time.deltaTime);
 
 
-
+            /*
             if (Physics.Raycast(head.transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
             {
                 Debug.DrawRay(head.transform.position, head.transform.forward * hit.distance, Color.yellow);
                 //Debug.Log("Did Hit");
-                if(ActiveTargets.SelectedObject != hit.transform.gameObject)
-                {
-                    ActiveTargets.SelectedObject = hit.transform.gameObject;
-                }
+
             } else {
                 Debug.DrawRay(head.transform.position, head.transform.TransformDirection(Vector3.forward) * 100, Color.white);
                 //Debug.Log("Did not Hit");
 
                 ActiveTargets.SelectedObject = null;
             }
+            */
         }
     }
 
