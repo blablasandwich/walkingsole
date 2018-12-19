@@ -43,7 +43,7 @@ public class ActiveTargets : MonoBehaviour
                 Debug.Log(value.name + " was selected");
             } else {
                 selectedObject = null;
-                Debug.Log("An object couldn't be set as an selected selected target. No worries");
+               // Debug.Log("An object couldn't be set as an selected selected target. No worries");
 
             }
         }
