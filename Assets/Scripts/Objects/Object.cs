@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Object : MonoBehaviour
 {
+    bool testbool = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,16 @@ public class Object : MonoBehaviour
     public void test()
     {
         Debug.Log("AFSDJGFJDHNGSJENHNJERDHSRH");
+        if (testbool)
+        {
+            GetComponent<Renderer>().sharedMaterial.color = new Color(1f, 0f, 0f, 1f);
+        }
+        else
+        {
+            GetComponent<Renderer>().sharedMaterial.color = new Color(1f, 1f, 1f, 1f);
+        }
+
+        testbool = !testbool;
     }
 
 }
