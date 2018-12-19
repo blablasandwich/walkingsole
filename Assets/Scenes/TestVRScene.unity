@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -460,50 +460,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7246885584735349645, guid: 20ae23046d36f21418f8b51035f33278,
-        type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 496673359, guid: 20ae23046d36f21418f8b51035f33278, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 496673365, guid: 20ae23046d36f21418f8b51035f33278, type: 3}
-      propertyPath: m_TargetDisplay
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7246885584735349645, guid: 20ae23046d36f21418f8b51035f33278, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20ae23046d36f21418f8b51035f33278, type: 3}
---- !u!1 &570071178 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5078183830433967526, guid: 20ae23046d36f21418f8b51035f33278,
-    type: 3}
-  m_PrefabInstance: {fileID: 570071177}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &570071179 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5232031150839691895, guid: 20ae23046d36f21418f8b51035f33278,
-    type: 3}
-  m_PrefabInstance: {fileID: 570071177}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &570071180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 570071178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75fa4d1dce4c3504988134ff8b740f1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  head: {fileID: 570071179}
-  speed: 10
-  maxRayDistance: 10
-  selected: 0
 --- !u!1 &2046680218
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +553,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2970980641999836905
+--- !u!1001 &8281497953668365139
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2

@@ -13,7 +13,7 @@ public class CameraRay : MonoBehaviour
 
 
         //Aim at this specific target
-        layerMask = 1 << LayerMask.NameToLayer("Player");
+        layerMask = LayerMask.NameToLayer("Interactable");
 
         //~ inverts bitmask to selectively aim at everything else besides player
         layerMask = ~layerMask;
@@ -24,13 +24,19 @@ public class CameraRay : MonoBehaviour
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-
+        Debug.Log("Previous: " + ActiveTargets.PSelectedObject);
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxRetDistance, layerMask)) {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * maxRetDistance , Color.blue);
             //Debug.Log(hit.point);
+
+            if(ActiveTargets.SelectedObject != hit.transform.gameObject && hit.transform.tag == "Player")
+            {
+                ActiveTargets.SelectedObject = hit.transform.root.gameObject;
+            }
             ActiveTargets.RetPos = hit.point;
         } else {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance , Color.blue);
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance , Color.yellow);
+            ActiveTargets.SelectedObject = null;
         }
     }
 }
