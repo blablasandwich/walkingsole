@@ -27,7 +27,7 @@ public class CameraRay : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxRetDistance, layerMask)) {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * maxRetDistance , Color.blue);
-            Debug.Log(hit.point);
+            //Debug.Log(hit.point);
             ActiveTargets.RetPos = hit.point;
         } else {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance , Color.blue);

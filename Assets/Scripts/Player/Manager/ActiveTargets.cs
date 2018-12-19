@@ -8,7 +8,7 @@ public class ActiveTargets : MonoBehaviour
     private static GameObject previousObject;
     private static Vector3 vrRetPos;
 
-    void Start()
+    void Awake()
     {
         selectedObject = GameObject.Find("Player");
         if(selectedObject)
@@ -48,7 +48,7 @@ public class ActiveTargets : MonoBehaviour
             }
         }
     }
-
+    
     public static Vector3 RetPos
     {
         get
