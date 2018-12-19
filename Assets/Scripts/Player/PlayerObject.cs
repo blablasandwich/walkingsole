@@ -8,7 +8,11 @@ public class PlayerObject : InteractableObject
     void Start()
     {
         Debug.Log("works");
+
     }
 
-
+    public void DoAction()
+    {
+        Debug.Log("Clicked");
+    }
 }
