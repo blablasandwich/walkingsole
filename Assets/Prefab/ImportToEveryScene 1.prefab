@@ -35,6 +35,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1477305944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6622179611891884786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382d549c137633e4ebaa35fbdc32dcf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p: {fileID: 0}
 --- !u!1001 &2970980641349872505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,6 +115,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3592675177362944954, guid: d040a733621cff74d9674f785672556f,
+        type: 3}
+      propertyPath: mainCamRoot
+      value: 
+      objectReference: {fileID: 6622179611898918331}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d040a733621cff74d9674f785672556f, type: 3}
 --- !u!4 &8354296064630200709 stripped
@@ -342,6 +360,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8441792608120377555}
     m_Modifications:
+    - target: {fileID: 4333739578727684778, guid: 5d8a03bad97f1c54cba96c1798369182,
+        type: 3}
+      propertyPath: m_Name
+      value: VRCam
+      objectReference: {fileID: 0}
     - target: {fileID: 4333739578727684777, guid: 5d8a03bad97f1c54cba96c1798369182,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -397,11 +420,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4333739578727684778, guid: 5d8a03bad97f1c54cba96c1798369182,
-        type: 3}
-      propertyPath: m_Name
-      value: VRCam
-      objectReference: {fileID: 0}
     - target: {fileID: 4333739578686606817, guid: 5d8a03bad97f1c54cba96c1798369182,
         type: 3}
       propertyPath: raycasterEventMask.m_Bits
@@ -409,9 +427,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d8a03bad97f1c54cba96c1798369182, type: 3}
+--- !u!1 &6622179611898918331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4333739578727684778, guid: 5d8a03bad97f1c54cba96c1798369182,
+    type: 3}
+  m_PrefabInstance: {fileID: 7476604761195474705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6622179611898918328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4333739578727684777, guid: 5d8a03bad97f1c54cba96c1798369182,
+    type: 3}
+  m_PrefabInstance: {fileID: 7476604761195474705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6622179611891884786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4333739578686606819, guid: 5d8a03bad97f1c54cba96c1798369182,
     type: 3}
   m_PrefabInstance: {fileID: 7476604761195474705}
   m_PrefabAsset: {fileID: 0}

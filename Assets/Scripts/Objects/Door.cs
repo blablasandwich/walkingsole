@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour {
-    Transform player; 
+    Transform player;
     Transform nextRoom;
     void Start() {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = ActiveTargets.Possess.transform;
+
         nextRoom = GameObject.Find("spawn").transform;
     }
 

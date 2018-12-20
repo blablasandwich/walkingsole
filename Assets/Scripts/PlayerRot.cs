@@ -7,7 +7,7 @@ public class PlayerRot : MonoBehaviour {
     public Transform p;
 
     void Start() {
-        p = GameObject.FindGameObjectWithTag("Player").transform.GetChild(2).transform;
+        p = ActiveTargets.Possess.transform.GetChild(2).transform;
     }
 
     void Update() {

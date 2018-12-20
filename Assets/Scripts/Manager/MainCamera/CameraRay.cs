@@ -5,18 +5,19 @@ using UnityEngine.EventSystems;
 
 public class CameraRay : MonoBehaviour
 {
-    public GameObject mainCamRoot;
+
     private RaycastHit hit;
     private Ray ray;
     public float maxRetDistance = 100.0f;
     private int layerMask;
     private RaycastResult gvrHit;
+    public GameObject initialPlayer;
+    public GameObject mainCamRoot;
+
 
     void Start()
     {
-        //Sets VR camera to one of the player prefabs
-        SetPossession(ActiveTargets.SelectedObject);
-
+        SetPossession(initialPlayer);
         //Aim at this specific target
         layerMask = 1 <<  LayerMask.NameToLayer("Interactable");
 
@@ -59,4 +60,5 @@ public class CameraRay : MonoBehaviour
     {
         mainCamRoot.transform.SetParent(other.transform);
     }
+
 }

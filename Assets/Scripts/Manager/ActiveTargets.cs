@@ -9,11 +9,16 @@ public class ActiveTargets : MonoBehaviour
     private static GameObject previousObject;
     private static GameObject currentPossessed;
     private static Vector3 vrRetPos;
+    public GameObject mainCamRoot;
+    public GameObject initialPlayer;
 
     void Awake()
     {
-        selectedObject = GameObject.Find("Player");
+        selectedObject = initialPlayer;
         previousObject = selectedObject;
+        //Sets VR camera to one of the player prefabs
+        //SetPossession(initialPlayer);
+
         if(selectedObject)
         {
             Debug.Log("Initializing game manager default target to: " + selectedObject.name);
@@ -93,5 +98,7 @@ public class ActiveTargets : MonoBehaviour
             currentPossessed = value;
         }
     }
+
+    
 
 }

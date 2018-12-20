@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Floor : MonoBehaviour {
     private Transform body;
-    public GameObject player;
+    private GameObject player;
     private GvrReticlePointer distance;
     bool walking = false;
-    int MoveRate = 4;
+    public int MoveRate = 2;
     void Start() {
-       player = GameObject.FindGameObjectWithTag("Player");
+       player = ActiveTargets.Possess;
        body = player.transform.GetChild(2).transform;
        distance = Camera.main.transform.GetChild(0).GetComponent<GvrReticlePointer>();
     }
