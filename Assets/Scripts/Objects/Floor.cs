@@ -2,40 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Floor : MonoBehaviour
-{
-    public GameObject body;
-    public GameObject cube;
-    public GameObject point;
-    public GameObject cam;
+public class Floor : MonoBehaviour {
+    private Transform body;
     public GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {
+    private GvrReticlePointer distance;
+
+    void Start() {
        player = GameObject.FindGameObjectWithTag("Player");
+       body = player.transform.GetChild(2).transform;
+       distance = Camera.main.transform.GetChild(0).GetComponent<GvrReticlePointer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public void test() {
+        player.transform.Translate(new Vector3(0, 0, distance.ReticleDistanceInMeters), body);
     }
 
-    public void test()
-    {
-        Debug.Log(point.GetComponent<GvrReticlePointer>().ReticleDistanceInMeters);
-
-
-        player.transform.Translate(new Vector3(0, 0, point.GetComponent<GvrReticlePointer>().ReticleDistanceInMeters), body.transform);
-        //player.transform.position = point.GetComponent<GvrReticlePointer>().PointerTransform.position;
-
-        // = player.transform.forward + point.GetComponent<GvrReticlePointer>().ReticleDistanceInMeters;
-
-
-    }
-
-
-    public void exit()
-        {
+    public void exit() {
         Application.Quit();
         }
 
