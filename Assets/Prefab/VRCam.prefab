@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4333739578727684778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.24, y: 9.12, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4333739578686606818}
@@ -39,6 +39,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4333739578727684777}
     m_Modifications:
+    - target: {fileID: 3754850746399084200, guid: 757471178e7e4a34fb06456aa07c3fad,
+        type: 3}
+      propertyPath: m_Name
+      value: Main Camera
+      objectReference: {fileID: 0}
     - target: {fileID: 3754850746399084201, guid: 757471178e7e4a34fb06456aa07c3fad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -144,11 +149,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3754850746399084200, guid: 757471178e7e4a34fb06456aa07c3fad,
-        type: 3}
-      propertyPath: m_Name
-      value: Main Camera
-      objectReference: {fileID: 0}
     - target: {fileID: 3754850746399083862, guid: 757471178e7e4a34fb06456aa07c3fad,
         type: 3}
       propertyPath: mainCamRoot
@@ -169,6 +169,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4333739578727684777}
     m_Modifications:
+    - target: {fileID: 555767533, guid: 34c21f523e72f45509a4e37ed0293c3b, type: 3}
+      propertyPath: m_Name
+      value: GvrControllerPointer
+      objectReference: {fileID: 0}
     - target: {fileID: 1820761120, guid: 34c21f523e72f45509a4e37ed0293c3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -212,10 +216,6 @@ PrefabInstance:
     - target: {fileID: 1820761120, guid: 34c21f523e72f45509a4e37ed0293c3b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 555767533, guid: 34c21f523e72f45509a4e37ed0293c3b, type: 3}
-      propertyPath: m_Name
-      value: GvrControllerPointer
       objectReference: {fileID: 0}
     - target: {fileID: 573655681, guid: 34c21f523e72f45509a4e37ed0293c3b, type: 3}
       propertyPath: raycastMode
