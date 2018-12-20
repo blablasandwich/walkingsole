@@ -7,10 +7,10 @@ public class Floor : MonoBehaviour {
     private GameObject player;
     private GvrReticlePointer distance;
     bool walking = false;
-    public int MoveRate = 2;
+    public int MoveRate = 4;
     void Start() {
        player = ActiveTargets.Possess;
-       body = player.transform.GetChild(2).transform;
+       body = ActiveTargets.Possess.transform.GetChild(2).transform;
        distance = Camera.main.transform.GetChild(0).GetComponent<GvrReticlePointer>();
     }
 

@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 2182501069775032204}
   m_Layer: 9
   m_Name: MaleFreeSimpleMovement
-  m_TagString: Player
+  m_TagString: PossiblePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -19,6 +19,7 @@ public class CameraMouse : MonoBehaviour
     {
         if(selected)
         {
+            Debug.Log(gameObject.name + " is currently selected");
             Vector3 forward = transform.TransformDirection(Vector3.forward) * maxRayDistance;
             //temp look at variable
             Vector3 ground = new Vector3(transform.position.x, 0, transform.position.z);

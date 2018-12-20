@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerRot : MonoBehaviour {
 
-    public Transform p;
+    Transform p;
 
     void Start() {
         p = ActiveTargets.Possess.transform.GetChild(2).transform;

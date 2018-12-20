@@ -10,11 +10,12 @@ public class ActiveTargets : MonoBehaviour
     private static GameObject currentPossessed;
     private static Vector3 vrRetPos;
     public GameObject mainCamRoot;
-    public GameObject initialPlayer;
+
 
     void Awake()
     {
-        selectedObject = initialPlayer;
+        GameObject initPlayer = GameObject.Find("Player");
+        selectedObject = initPlayer;
         previousObject = selectedObject;
         //Sets VR camera to one of the player prefabs
         //SetPossession(initialPlayer);
@@ -43,6 +44,12 @@ public class ActiveTargets : MonoBehaviour
             {
                 //Sets interacted item according to tag as a selected item
                 if(previousObject != value && value.tag == "Player")
+                {
+                    previousObject = selectedObject;
+                    previousObject.GetComponent<CameraMouse>().selected = false;
+                    selectedObject = value.transform.root.gameObject;
+                    selectedObject.GetComponent<CameraMouse>().selected = true;
+                } else if(previousObject != value && value.tag == "PossiblePlayer")
                 {
                     previousObject = selectedObject;
                     previousObject.GetComponent<CameraMouse>().selected = false;
@@ -99,6 +106,6 @@ public class ActiveTargets : MonoBehaviour
         }
     }
 
-    
+
 
 }

@@ -11,13 +11,14 @@ public class CameraRay : MonoBehaviour
     public float maxRetDistance = 100.0f;
     private int layerMask;
     private RaycastResult gvrHit;
-    public GameObject initialPlayer;
     public GameObject mainCamRoot;
 
 
     void Start()
     {
-        SetPossession(initialPlayer);
+        //Sets VR camera to one of the player prefabs
+        SetPossession(ActiveTargets.Possess);
+        
         //Aim at this specific target
         layerMask = 1 <<  LayerMask.NameToLayer("Interactable");
 
@@ -38,6 +39,10 @@ public class CameraRay : MonoBehaviour
         {
             //Insert interactable object tags here
             if(ActiveTargets.SelectedObject != gvrHit.gameObject && gvrHit.gameObject.CompareTag("Player"))
+            {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * gvrHit.distance , Color.yellow);
+                ActiveTargets.SelectedObject = gvrHit.gameObject;
+            } else if (ActiveTargets.SelectedObject != gvrHit.gameObject && gvrHit.gameObject.CompareTag("PossiblePlayer"))
             {
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * gvrHit.distance , Color.yellow);
                 ActiveTargets.SelectedObject = gvrHit.gameObject;
