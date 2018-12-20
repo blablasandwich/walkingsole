@@ -7,6 +7,7 @@ public class ActiveTargets : MonoBehaviour
 {
     private static GameObject selectedObject;
     private static GameObject previousObject;
+    private static GameObject currentPossessed;
     private static Vector3 vrRetPos;
 
     void Awake()
@@ -18,6 +19,7 @@ public class ActiveTargets : MonoBehaviour
             Debug.Log("Initializing game manager default target to: " + selectedObject.name);
             //temporarily for now
             selectedObject.GetComponent<CameraMouse>().selected = false;
+            Possess = selectedObject;
         } else {
             Debug.LogError("Didn't find any player object, currently nothing is selected on game manager. Maybe place a Player onto the scene.");
         }
@@ -45,7 +47,7 @@ public class ActiveTargets : MonoBehaviour
                     selectedObject = value.transform.root.gameObject;
                 }
             } else {
-                selectedObject = null; 
+                selectedObject = null;
                 Debug.Log("An object couldn't be set as an selected selected target. No worries");
             }
         }
@@ -77,6 +79,18 @@ public class ActiveTargets : MonoBehaviour
         set
         {
             vrRetPos = value;
+        }
+    }
+
+    public static GameObject Possess
+    {
+        get
+        {
+            return currentPossessed;
+        }
+        set
+        {
+            currentPossessed = value;
         }
     }
 

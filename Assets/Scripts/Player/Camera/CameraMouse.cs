@@ -25,20 +25,31 @@ public class CameraMouse : MonoBehaviour
         	Plane playerPlane = new Plane(Vector3.up, ground);
 
         	// Get the point along the ray that hits the calculated distance.
+            /* Instead of looking at ret pos, look at the player
         	Vector3 targetBodyPoint = ActiveTargets.RetPos;
             Vector3 targetHeadPoint = ActiveTargets.RetPos;
-
+            */
+            Vector3 targetBodyPoint = ActiveTargets.Possess.transform.position;
+            Vector3 targetHeadPoint = ActiveTargets.Possess.transform.position;
             //temporary fix to keep body from tilting
             targetBodyPoint.y = transform.position.y;
 
-
-        	// Determine the target rotation.  This is the rotation if the transform looks at the target point.
+            // Determine the target rotation.  This is the rotation if the transform looks at the target point.
         	Quaternion targetBodyRotation = Quaternion.LookRotation(targetBodyPoint - transform.position);
-            Quaternion targetHeadRotation = Quaternion.LookRotation(targetHeadPoint - head.transform.position);
 
-        	// Smoothly rotate towards the target point.
-        	transform.rotation = Quaternion.Slerp(transform.rotation, targetBodyRotation, speed * Time.deltaTime);
-            head.transform.rotation = Quaternion.Slerp(head.transform.rotation, targetHeadRotation, speed * Time.deltaTime);
+            // Smoothly rotate towards the target point.
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetBodyRotation, speed * Time.deltaTime);
+
+            if(head)
+            {
+                //Do same as above
+                Quaternion targetHeadRotation = Quaternion.LookRotation(targetHeadPoint - head.transform.position);
+                head.transform.rotation = Quaternion.Slerp(head.transform.rotation, targetHeadRotation, speed * Time.deltaTime);
+            }
+
+
+
+
 
 
             /*//May not be needed
