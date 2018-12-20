@@ -1,18 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerObject : InteractableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    //Function called from being pressed
+    new public void DoAction()
     {
-        Debug.Log("works");
-
-    }
-
-    public void DoAction()
-    {
-        Debug.Log("Clicked");
+        //Pop up a menu or something
+        Debug.Log(gameObject.name + " was Clicked");
     }
 }

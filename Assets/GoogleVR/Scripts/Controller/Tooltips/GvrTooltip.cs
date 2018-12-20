@@ -59,6 +59,7 @@ public class GvrTooltip : MonoBehaviour, IGvrArmModelReceiver {
     Custom
   };
 
+  #pragma warning disable
   [Tooltip("The location to display the tooltip at relative to the controller visual.")]
   [SerializeField]
   private Location location;
@@ -70,6 +71,7 @@ public class GvrTooltip : MonoBehaviour, IGvrArmModelReceiver {
   [Tooltip("Determines if the tooltip is always visible regardless of the controller's location.")]
   [SerializeField]
   private bool alwaysVisible;
+  #pragma warning restore
 
   private bool isOnLeft = false;
   private RectTransform rectTransform;

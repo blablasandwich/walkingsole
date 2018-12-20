@@ -13,7 +13,6 @@ public class ActiveTargets : MonoBehaviour
     {
         selectedObject = GameObject.Find("Player");
         previousObject = selectedObject;
-        Debug.Log("previous: " + previousObject);
         if(selectedObject)
         {
             Debug.Log("Initializing game manager default target to: " + selectedObject.name);
@@ -35,28 +34,24 @@ public class ActiveTargets : MonoBehaviour
         {
             if(value != null)
             {
-                if(previousObject != selectedObject && value.tag == "Player")
+                //Sets interacted item according to tag as a selected item
+                if(previousObject != value && value.tag == "Player")
                 {
-                    GameObject temp = selectedObject.gameObject;
-                    Debug.Log("this " + selectedObject.name);
+                    previousObject = selectedObject;
                     previousObject.GetComponent<CameraMouse>().selected = false;
-                    previousObject = temp.gameObject;
                     selectedObject = value.transform.root.gameObject;
                     selectedObject.GetComponent<CameraMouse>().selected = true;
                 } else {
                     selectedObject = value.transform.root.gameObject;
                 }
-
-                Debug.Log(value.name + " was selected");
             } else {
-                selectedObject = null;
+                selectedObject = null; 
                 Debug.Log("An object couldn't be set as an selected selected target. No worries");
-
             }
         }
     }
 
-    public static GameObject PSelectedObject
+    public static GameObject PrevSelectedObject
     {
         get
         {

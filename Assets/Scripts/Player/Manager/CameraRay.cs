@@ -11,34 +11,46 @@ public class CameraRay : MonoBehaviour
     public float maxRetDistance = 100.0f;
     private int layerMask;
     private RaycastResult gvrHit;
+
     void Start()
     {
+        //Sets VR camera to one of the player prefabs
         SetPossession(ActiveTargets.SelectedObject);
 
         //Aim at this specific target
         layerMask = 1 <<  LayerMask.NameToLayer("Interactable");
-        gvrHit = GvrPointerInputModule.CurrentRaycastResult;
-        //~ inverts bitmask to selectively aim at everything else besides player
+
+        //~ inverts bitmask to selectively aim at everything else besides player. Use when necessary
         //layerMask = ~layerMask;
     }
 
     // Update is called once per frame
     void Update()
     {
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.Log("Previous: " + ActiveTargets.PSelectedObject);
-        Debug.Log("Selected: " + ActiveTargets.SelectedObject);
-        if(ActiveTargets.SelectedObject != gvrHit.gameObject && gvrHit.gameObject.CompareTag("Player"))
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * gvrHit.distance , Color.yellow);
+        //gvrHit is the google VR raycast
+        gvrHit = GvrPointerInputModule.CurrentRaycastResult;
 
-            Debug.Log("New Selected: " + gvrHit.gameObject.name);
-            ActiveTargets.SelectedObject = gvrHit.gameObject;
+        //Debug.Log("Previous: " + ActiveTargets.PrevSelectedObject);
+        //Debug.Log("Selected: " + ActiveTargets.SelectedObject);
+
+        if(gvrHit.gameObject != null)
+        {
+            //Insert interactable object tags here
+            if(ActiveTargets.SelectedObject != gvrHit.gameObject && gvrHit.gameObject.CompareTag("Player"))
+            {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * gvrHit.distance , Color.yellow);
+                ActiveTargets.SelectedObject = gvrHit.gameObject;
+            } else {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * maxRetDistance , Color.blue);
+
+                //Don't set to null, it causes problems
+                //ActiveTargets.SelectedObject = null;
+            }
+
+            //Sets the hit position of the reticle in static var in GameManager
             ActiveTargets.RetPos = gvrHit.worldPosition;
-        } else {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * maxRetDistance , Color.blue);
-            ActiveTargets.SelectedObject = null;
         }
+
 
     }
 

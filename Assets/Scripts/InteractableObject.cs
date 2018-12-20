@@ -1,29 +1,31 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(EventTrigger))]
 public class InteractableObject : MonoBehaviour
 {
-    UnityEvent interacted;
+    /* Trigger stuff may be scrapped
+    EventTrigger trigger;
 
     void Awake()
     {
-        if (interacted == null)
-            interacted = new UnityEvent();
 
-        interacted.AddListener(DoAction);
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space) && ActiveTargets.SelectedObject == this.gameObject)
+        trigger = gameObject.GetComponent<EventTrigger>();
+        if(!trigger)
         {
-            interacted.Invoke();
+            Debug.LogError("There is no event trigger on interactable object of: " + gameObject.name);
+            // Below is a bit bugged, it only calls from the inherited DoAction instead of the child DoAction
+            trigger = gameObject.AddComponent<EventTrigger>();
+            EventTrigger.Entry entry = new EventTrigger.Entry();
+            entry.eventID = EventTriggerType.PointerClick;
+            entry.callback.AddListener((data) => { DoAction( (PointerEventData)data ); });
+            trigger.triggers.Add(entry);
         }
+
     }
+    */
 
     public void DoAction()
     {
