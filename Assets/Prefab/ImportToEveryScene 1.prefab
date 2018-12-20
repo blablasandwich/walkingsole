@@ -120,7 +120,7 @@ PrefabInstance:
     - target: {fileID: 9072424865451117433, guid: b61a2e9cebcfa864a8c5f1d21f745eff,
         type: 3}
       propertyPath: m_Name
-      value: GvrControllerMain Variant
+      value: GvrControllerMain
       objectReference: {fileID: 0}
     - target: {fileID: 9072424865451472685, guid: b61a2e9cebcfa864a8c5f1d21f745eff,
         type: 3}
@@ -195,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 7004592564556034471, guid: 4663d1f2735dfce419fb35803a5cf2a2,
         type: 3}
       propertyPath: m_Name
-      value: GvrEditorEmulator Variant
+      value: GvrEditorEmulator
       objectReference: {fileID: 0}
     - target: {fileID: 7004592564555832597, guid: 4663d1f2735dfce419fb35803a5cf2a2,
         type: 3}
@@ -270,7 +270,7 @@ PrefabInstance:
     - target: {fileID: 1313706140726384086, guid: bb79c904263bded40aaba4eeb69c8d0b,
         type: 3}
       propertyPath: m_Name
-      value: GvrEventSystem Variant
+      value: GvrEventSystem
       objectReference: {fileID: 0}
     - target: {fileID: 1313706140738164695, guid: bb79c904263bded40aaba4eeb69c8d0b,
         type: 3}
@@ -342,11 +342,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8441792608120377555}
     m_Modifications:
-    - target: {fileID: 4333739578727684778, guid: 5d8a03bad97f1c54cba96c1798369182,
-        type: 3}
-      propertyPath: m_Name
-      value: VRCam
-      objectReference: {fileID: 0}
     - target: {fileID: 4333739578727684777, guid: 5d8a03bad97f1c54cba96c1798369182,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -401,6 +396,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4333739578727684778, guid: 5d8a03bad97f1c54cba96c1798369182,
+        type: 3}
+      propertyPath: m_Name
+      value: VRCam
       objectReference: {fileID: 0}
     - target: {fileID: 4333739578686606817, guid: 5d8a03bad97f1c54cba96c1798369182,
         type: 3}
